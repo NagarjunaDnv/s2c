@@ -41,6 +41,15 @@
               <div class="title">
                 Basic settings
               </div>
+              <div class="briefDetails">
+                <span *ngIf="cacService['targetGroupsDetails'][i]['noOfWantedCompletes']">{{cacService['targetGroupsDetails'][i]['noOfWantedCompletes']}} completes, </span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['country']">{{cacService['targetGroupsDetails'][i]['country']}}, </span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['gender']">{{cacService['targetGroupsDetails'][i]['gender']}}, </span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['minAge']&&cacService['targetGroupsDetails'][i]['maxAge']">{{cacService['targetGroupsDetails'][i]['minAge']}}-{{cacService['targetGroupsDetails'][i]['maxAge']}}, </span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']">LOI {{cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']}} min, </span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']">IR {{cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']}}%, </span>
+                <span>4 Apr 2020</span>
+              </div>
               <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </li>
             <li (click)="openTab(i,1)" [ngClass]="{'activetab': reqTabIndex[i]==1}">

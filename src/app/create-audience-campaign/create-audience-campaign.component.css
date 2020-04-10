@@ -158,9 +158,20 @@
   letter-spacing: 0.58px;
   line-height: 16px;
 }
+.tabs ul li .briefDetails{
+    color: #4A4A4A;
+    font-family: Roboto;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-right: 25px;
+    letter-spacing: 0.7px;
+    line-height: 17px;
+}
 .tabs ul li .arrow{
     position: absolute;
     right: 12px;
+    top:50%;
+    transform: translateY(-50%);
 }
 .tabs ul li .arrow i{
     color:#2A2A2A;

@@ -20,15 +20,15 @@
           <div class="i-heading">Gender</div>
           <div class="v-h">
             <label>
-              <input type="radio" value="Male" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+              <input type="radio" value="M" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
                 <span>Male</span>
             </label>
             <label>
-              <input type="radio" value="Female" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+              <input type="radio" value="F" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
                 <span>Female</span>
             </label>
             <label>
-              <input type="radio" value="Both" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+              <input type="radio" value="M&F" name="gender{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
                 <span>Both</span>
             </label>
           </div>
@@ -50,6 +50,7 @@
         <div *ngIf="errors['gender']">*Gender is required</div>
         <div *ngIf="errors['age']">*Age is required</div>
         <div *ngIf="errors['ageRange']">*Age range must be in between 18 and 75</div>
+        <div *ngIf="errors['ageCompare']">*Upper limit must be greater than lower limit</div>
       </div>
     </div>
     <div class="category2">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateAudienceCampaignService } from '../services/create-audience-campaign.service';
 declare var $:any;
 @Component({
   selector: 'app-create-audience-campaign',
@@ -9,7 +10,7 @@ export class CreateAudienceCampaignComponent implements OnInit {
   reqTabIndex:Array<Number>=[0,0];
   prevIndex:number=-1
   groups:any=[0,1]
-  constructor() { }
+  constructor(public cacService:CreateAudienceCampaignService) { }
 
   ngOnInit() {
     console.log(this.reqTabIndex[0])

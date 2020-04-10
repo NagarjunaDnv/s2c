@@ -30,6 +30,9 @@ export class BasicSettingsComponent implements OnInit {
     else if(data['minAge']<18 ||data['minAge']>75||data['maxAge']>75||data['maxAge']<18){
       this.errors.ageRange=true
     }
+    else if(data['maxAge']<data['minAge']){
+      this.errors.ageCompare=true
+    }
     if(data['estimatedIncidenceRate']==''||data['noOfWantedCompletes']==''||data['estimatedLengthOfInterview']==''||data['startDate']==''||data['noOfDaysinField']==''){
       console.log(data)
       this.errors.survey=true
