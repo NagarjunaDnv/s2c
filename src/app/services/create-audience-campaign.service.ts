@@ -13,7 +13,7 @@ export class CreateAudienceCampaignService {
       minAge:'',
       estimatedIncidenceRate:'',
       estimatedLengthOfInterview:'',
-      startDate:new Date(),
+      startDate:null,
       noOfDaysinField:''
     },
     {
@@ -24,7 +24,7 @@ export class CreateAudienceCampaignService {
       minAge:'',
       estimatedIncidenceRate:'',
       estimatedLengthOfInterview:'',
-      startDate:new Date(),
+      startDate:null,
       noOfDaysinField:''
     },
   ]

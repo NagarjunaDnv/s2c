@@ -48,7 +48,7 @@
                 <span *ngIf="cacService['targetGroupsDetails'][i]['minAge']&&cacService['targetGroupsDetails'][i]['maxAge']">{{cacService['targetGroupsDetails'][i]['minAge']}}-{{cacService['targetGroupsDetails'][i]['maxAge']}}, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']">LOI {{cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']}} min, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']">IR {{cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']}}%, </span>
-                <!-- <span *ngIf="cacService['targetGroupsDetails'][i]['startDate']">{{cacService['targetGroupsDetails'][i]['startDate']}}</span> -->
+                <span *ngIf="cacService['targetGroupsDetails'][i]['startDate']">{{cacService['targetGroupsDetails'][i]['startDate']}}</span>
               </div>
               <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </li>
