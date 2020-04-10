@@ -1,0 +1,32 @@
+.title-1{
+    display: flex;
+    align-items: center;
+}
+.title-1 span{
+    color: #2A2A2A;
+}
+
+.title-1 span:nth-child(1){
+    margin-right: 8px;
+    margin-left: 18px;
+    color: #374E99;
+    font-family: Cairo;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    line-height: 33px;
+}
+.title-1 span:nth-child(2){
+    margin-right: 10px;
+    cursor: pointer;
+}
+.title-1 span:nth-child(3){
+    cursor: pointer;
+}
+.title-1 span:nth-child(2) i{
+    font-size: 12px;
+}
+.group-title{
+    border-top: 1px solid #EAEAEA;
+
+}

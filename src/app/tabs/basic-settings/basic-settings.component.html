@@ -1,0 +1,120 @@
+<div class="settings">
+  <div class="title">
+    Basic Audience Settings
+  </div>
+  <div class="categories">
+    <div class="category1">
+      <div class="sub-title">
+        Demographics
+      </div>
+      <ul>
+        <li>
+          <div class="i-heading">Country</div>
+          <div class="v-h">
+            <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['country']">
+              <option value="India">India</option>
+              <option value="Brazil">Brazil</option>
+              <option value="China">China</option>
+            </select>
+          </div>
+        </li>
+        <li>
+          <div class="i-heading">Gender</div>
+          <div class="v-h">
+            <label>
+              <input type="radio" value="Male" name="gender" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+                <span>Male</span>
+            </label>
+            <label>
+              <input type="radio" value="Female" name="gender" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+                <span>Female</span>
+            </label>
+            <label>
+              <input type="radio" value="Both" name="gender" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['gender']">
+                <span>Both</span>
+            </label>
+          </div>
+        </li>
+        <li>
+          <div class="i-heading">Age</div>
+          <div class="v-h">
+            <label>
+              <input type="number" class="form-control" placeholder="Min" min="18" max="75" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['minAge']">
+            </label>
+            <div>-</div>
+            <label>
+              <input type="number" class="form-control" placeholder="Max" min="18" max="75" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['maxAge']">
+            </label>
+          </div>
+        </li>
+      </ul>
+      <div class="errors">
+        <div *ngIf="errors['gender']">*Gender is required</div>
+        <div *ngIf="errors['age']">*Age is required</div>
+        <div *ngIf="errors['ageRange']">*Age range must be in between 18 and 75</div>
+      </div>
+    </div>
+    <div class="category2">
+      <div class="sub-title">
+        Survey-specific-data
+      </div>
+      <ul>
+        <li>
+          <div class="j-heading">Number of wanted Completes</div>
+          <div class="j-h">
+            <input type="number" placeholder="100" class="form-control" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['noOfWantedCompletes']">
+          </div>
+        </li>
+        <li>
+          <div class="j-heading">Estimated incidence rate (IR)</div>
+          <div class="j-h">
+            <div class="input-group mb-3">
+              <input type="number" placeholder="100" class="form-control" id="addon1" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['estimatedIncidenceRate']">
+              <div class="input-group-append">
+                <span class="input-group-text" id="addon1">%</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="j-heading">Estimated length of interview (LOI)</div>
+          <div class="j-h">
+            <div class="input-group mb-3">
+              <input type="number" placeholder="100" class="form-control" id="addon2" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['estimatedLengthOfInterview']">
+              <div class="input-group-append">
+                <span class="input-group-text" id="addon2">Min</span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="j-heading">Start date</div>
+          <div class="j-h">
+            <div class="input-group mb-3">
+              <input type="date" class="form-control" id="addon3" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['startDate']">
+              <div class="input-group-append">
+                <span class="input-group-text" id="addon3"><i class="far fa-calendar"></i></span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="j-heading">Number of days in field</div>
+          <div class="j-h">
+            <input type="number" placeholder="100" class="form-control" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['noOfDaysinField']">
+          </div>
+        </li>
+      </ul>
+      <div class="errors">
+        <div *ngIf="errors.survey">*All above fields are required</div>
+        <div *ngIf="errors.estimatedIncidenceRateRange">*Estimated incidence rate must be an integer in the range of (1,100)</div>
+        <div *ngIf="errors.noOfWantedCompletes">*Number of Wanted Completes must be a natural number</div>
+        <div *ngIf="errors.estimatedLengthOfInterview">*Estimated Length of Interview should be greater than 0 Minute</div>
+        <div *ngIf="errors.noOfDaysinField">*Number of Days in Field should be greater than 0</div>
+      </div>
+    </div>
+  </div>
+  <div class="action">
+    <button class="continue" (click)="continue(group_index)">Continue</button>
+  </div>
+</div>
