@@ -4,7 +4,6 @@
     margin-left: 30px;
     margin-right: 30px;
     position: relative;
-    height: 500px;
 }
 .rectangle,.rectangle-copy {
     border: 1px solid #EAEAEA;
@@ -18,7 +17,8 @@
 .group-4{
     margin-left: 20px;
     margin-right: 20px;
-    height: 63px;
+    min-height: 63px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,4 +189,80 @@
 }
 .chevron-down i{
     font-size: 12px;
+}
+@media screen and (min-width:1196px){
+    .mob{
+        display: none;
+    }
+    .tabs-mobile{
+        display: none;
+    }
+}
+@media screen and (max-width:1216px){
+    .tabs{
+        display: none;
+    }
+    .tab_content{
+        width: 100%;
+    }
+    .tabs-mobile{
+        display: block;
+        margin: 12px 12px 0 12px;
+    }
+    .tabs-mobile .dropdown{
+        width: 100%;
+    }
+    .tabs-mobile .dropdown button{
+        width: 100%;
+        text-align: left;
+    }
+    .tabs-mobile .dropdown-menu{
+        width: 100%;
+    }
+    .dropdown-toggle::after {
+        float: right;
+        margin-top: 10px;
+    }
+    .container-1{
+        display: block;
+    }
+}
+@media screen and (max-width:1196px){
+    .con-t{
+        display: none;
+    }
+    .briefDetails{
+        display: none;
+    }
+    .mob{
+        display: block
+    }
+}
+@media screen and (max-width:681px){
+    .group-4{
+        display: block;
+    }
+    .group-5{
+        display: block;
+    }
+    .campaign-overview{
+        width: 100%;
+    }
+    .action{
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+        margin-top:12px;
+    }
+}
+@media screen and (max-width:576px){
+    .bg{
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+}
+@media screen and (max-width:476px){
+    .create-audience-camp{
+        font-size: 20px;
+    }
 }

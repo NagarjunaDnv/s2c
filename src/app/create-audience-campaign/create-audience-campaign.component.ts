@@ -8,6 +8,7 @@ declare var $:any;
 })
 export class CreateAudienceCampaignComponent implements OnInit {
   reqTabIndex:Array<Number>=[0,0];
+  tabNames:any=['Basic Settings','Regions','Audience Panel','Profiling','Quotas','Exclusions']
   prevIndex:number=-1
   groups:any=[0,1]
   constructor(public cacService:CreateAudienceCampaignService) { }

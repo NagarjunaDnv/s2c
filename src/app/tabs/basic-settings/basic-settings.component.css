@@ -152,3 +152,35 @@ input{
 input{
     color: black;
 }
+
+@media screen and (max-width:804px){
+    .categories{
+        flex-direction: column;
+    }
+    .category1,.category2{
+        width: 100%;
+        height: auto;
+    }
+    .catogory1{
+        margin-bottom: 20px !important;
+    }
+}
+@media screen and (max-width:410px){
+    ul li,.category2 li{
+        flex-direction: column;
+        justify-content: start;
+        align-items: initial;
+        padding: 12px 0 8px 0;
+        border-bottom: none;
+        height: auto;
+    }
+    .i-heading,.j-heading{
+        width: 100%;
+    }
+    .v-h,.j-h{
+        margin-top: 12px;
+    }
+    .errors{
+        margin-left: 10px;
+    }
+}

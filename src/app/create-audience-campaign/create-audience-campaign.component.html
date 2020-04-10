@@ -18,6 +18,9 @@
       <div class="campaign-overview">
         Campaign Overview
       </div>
+      <div class="mob">
+        <div class="group2-copy"><span class="text">Survey Category:</span>&nbsp;<span class="text1">Banking & Finance</span></div>
+      </div>
       <div class="con-t">
         <div class="group2-copy"><span class="text">Survey Category:</span>&nbsp;<span class="text1">Banking & Finance</span></div>
         <div class="group-2"><span class="text">Wanted Completes:</span>&nbsp;<span class="text1">1000</span></div>
@@ -37,11 +40,11 @@
         <div class="container-1">
           <div class="tabs">
           <ul>
-            <li (click)="openTab(i,0)" [ngClass]="{'activetab': reqTabIndex[i]==0}">
+            <li (click)="openTab(i,k)" [ngClass]="{'activetab': reqTabIndex[i]==k}" *ngFor="let tab of tabNames;let k=index">
               <div class="title">
-                Basic settings
+                {{tabNames[k]}}
               </div>
-              <div class="briefDetails">
+              <div class="briefDetails" *ngIf="k==0">
                 <span *ngIf="cacService['targetGroupsDetails'][i]['noOfWantedCompletes']">{{cacService['targetGroupsDetails'][i]['noOfWantedCompletes']}} completes, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['country']">{{cacService['targetGroupsDetails'][i]['country']}}, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['gender']">{{cacService['targetGroupsDetails'][i]['gender']}}, </span>
@@ -52,37 +55,17 @@
               </div>
               <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </li>
-            <li (click)="openTab(i,1)" [ngClass]="{'activetab': reqTabIndex[i]==1}">
-              <div class="title">
-                Regions
-              </div>
-              <span class="arrow"><i class="fas fa-chevron-right"></i></span>
-            </li>
-            <li (click)="openTab(i,2)" [ngClass]="{'activetab': reqTabIndex[i]==2}">
-              <div class="title">
-                Audience Panel
-              </div>
-              <span class="arrow"><i class="fas fa-chevron-right"></i></span>
-            </li>
-            <li (click)="openTab(i,3)" [ngClass]="{'activetab': reqTabIndex[i]==3}">
-              <div class="title">
-                Profiling
-              </div>
-              <span class="arrow"><i class="fas fa-chevron-right"></i></span>
-            </li>
-            <li (click)="openTab(i,4)" [ngClass]="{'activetab': reqTabIndex[i]==4}">
-              <div class="title">
-                Quotas
-              </div>
-              <span class="arrow"><i class="fas fa-chevron-right"></i></span>
-            </li>
-            <li (click)="openTab(i,5)" [ngClass]="{'activetab': reqTabIndex[i]==5}">
-              <div class="title">
-                Exclusions
-              </div>
-              <span class="arrow"><i class="fas fa-chevron-right"></i></span>
-            </li>
           </ul>
+          </div>
+          <div class="tabs-mobile">
+            <div class="dropdown">
+              <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{tabNames[reqTabIndex[i]]}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" (click)="openTab(i,j)" *ngFor="let tab of tabNames;let j=index">{{tab}}</a>
+              </div>
+            </div>
           </div>
           <div class="tab_content">
             <app-tabs [tab_index]="reqTabIndex[i]" group_index={{i}}></app-tabs>
