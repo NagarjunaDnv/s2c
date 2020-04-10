@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CreateAudienceCampaignService } from 'src/app/services/create-audience-campaign.service';
-
+import {countryList} from './countriesList'
 @Component({
   selector: 'app-basic-settings',
   templateUrl: './basic-settings.component.html',
   styleUrls: ['./basic-settings.component.css']
 })
 export class BasicSettingsComponent implements OnInit {
-  @Input() group_index:number
+  @Input() group_index:number;
+  countryList:Array<any>=countryList
   errors:any={}
   constructor(public cacService:CreateAudienceCampaignService) { }
 

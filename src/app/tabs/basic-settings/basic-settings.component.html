@@ -12,9 +12,7 @@
           <div class="i-heading">Country</div>
           <div class="v-h">
             <select class="custom-select" id="a{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['country']">
-              <option value="India">India</option>
-              <option value="Brazil">Brazil</option>
-              <option value="China">China</option>
+              <option value="{{country}}" *ngFor="let country of countryList">{{country}}</option>
             </select>
           </div>
         </li>
