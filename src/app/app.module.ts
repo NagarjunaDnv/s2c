@@ -9,21 +9,33 @@ import { BasicSettingsComponent } from './tabs/basic-settings/basic-settings.com
 import { RegionsComponent } from './tabs/regions/regions.component';
 import { TabsComponent } from './tabs/tabs.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import { SubRegionsComponent } from './tabs/sub-regions/sub-regions.component';
+import { FormatDatePipe } from './pipes/formateDate.pipe';
+import { ProfilingComponent } from './tabs/profiling/profiling.component';
+import { ProfilingQuestionsComponent } from './tabs/profiling-questions/profiling-questions.component';
+import { CountPipe } from './pipes/count.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    FormatDatePipe,
+    CountPipe,
     CreateAudienceCampaignComponent,
     GroupTitleComponent,
     BasicSettingsComponent,
     RegionsComponent,
     TabsComponent,
+    SubRegionsComponent,
+    ProfilingComponent,
+    ProfilingQuestionsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

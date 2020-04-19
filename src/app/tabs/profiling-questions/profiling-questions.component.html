@@ -1,0 +1,16 @@
+<div class="sub-regions" *ngIf="isDataRetrieved">
+    <div class="discard">
+        <button class="btn btn-primary" (click)="goBack()"><i class="fas fa-chevron-left"></i>&nbsp;Go back</button>
+      </div>
+    <div class="heading">
+        Choose a global profiling category > Select {{cacService.profilingQuestions[cacService.selectedCountryDetails[group_index]['id']][cacService.profilingCategoryCurrentlySelected[group_index]]['name']}} Attributes
+    </div>
+    <div class="question-container" *ngFor="let question of cacService.profilingQuestions[cacService.selectedCountryDetails[group_index]['id']][cacService.profilingCategoryCurrentlySelected[group_index]]['questions']">
+        <div class="title">{{question.text}}&nbsp;&nbsp;<span (click)="selectAll(question.variables)">Select All</span></div>
+        <div class="row">
+            <div class="col-auto variable" *ngFor="let variable of question.variables" (click)="processVariableID(variable.id)" [ngClass]="{'variable-selected': cacService.selectedProfilingCQ[group_index][cacService.profilingCategoryCurrentlySelected[group_index]]&&cacService.selectedProfilingCQ[group_index][cacService.profilingCategoryCurrentlySelected[group_index]][variable.id]}">
+                {{variable.name}}
+            </div>
+        </div>
+    </div>
+</div>

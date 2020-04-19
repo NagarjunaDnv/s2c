@@ -1,0 +1,23 @@
+<div class="sub-regions">
+  <div class="discard">
+    <button class="btn btn-danger" (click)="discardRegionType()"><i class="fas fa-chevron-left"></i>&nbsp;Discard region type</button>
+  </div>
+  <div class="title">
+    Choose regions from {{cacService['selectedCountryDetails'][group_index]['regionTypes'][cacService['selectedRegionTypeIndex'][group_index]]['name']}}
+  </div>
+  <div class="methods">
+    <div class="method-1">
+      <button class="btn" (click)="selectAll()">Select all</button>
+    </div>
+    <div class="method-2">
+      <button class="btn" (click)="deSelectAll()">Deselect all</button>
+    </div>
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let option of cacService['selectedCountryDetails'][group_index]['regionTypes'][cacService['selectedRegionTypeIndex'][group_index]]['regions']" (click)="toggle(option.id)" [ngClass]="{'selected':cacService.selectedOptions[group_index][option.id]}">
+      <div class="option-title">
+        {{option.name}}
+      </div>
+    </div>
+  </div>
+</div>

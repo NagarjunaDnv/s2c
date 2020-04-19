@@ -11,8 +11,8 @@
         <li>
           <div class="i-heading">Country</div>
           <div class="v-h">
-            <select class="custom-select" id="a{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['country']">
-              <option value="{{country}}" *ngFor="let country of countryList">{{country}}</option>
+            <select class="custom-select" id="a{{group_index}}" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['country']" (change)="handleCountryChange($event,group_index)">
+              <option value="{{country.name}}" *ngFor="let country of cacService['countries']">{{country.name}}</option>
             </select>
           </div>
         </li>
@@ -46,10 +46,10 @@
           </div>
         </li>
       </ul>
-      <div class="errors">
+      <div class="errors" *ngIf="errors">
         <div *ngIf="errors['gender']">*Gender is required</div>
         <div *ngIf="errors['age']">*Age is required</div>
-        <div *ngIf="errors['ageRange']">*Age range must be in between 18 and 75</div>
+        <div *ngIf="errors['ageRange']">*Age range must be in between {{cacService['selectedCountryDetails'][group_index]['ageMin']}} and 75</div>
         <div *ngIf="errors['ageCompare']">*Upper limit must be greater than lower limit</div>
       </div>
     </div>
@@ -90,7 +90,7 @@
           <div class="j-heading">Start date</div>
           <div class="j-h">
             <div class="input-group mb-3">
-              <input type="date" class="form-control" id="addon3" [(ngModel)]="cacService['targetGroupsDetails'][group_index]['startDate']">
+              <input class="form-control start-date" id="addon3" value="{{cacService['targetGroupsDetails'][group_index]['startDate']|formatDate}}">
               <div class="input-group-append">
                 <span class="input-group-text" id="addon3"><i class="far fa-calendar"></i></span>
               </div>
@@ -104,11 +104,11 @@
           </div>
         </li>
       </ul>
-      <div class="errors">
+      <div class="errors" *ngIf="errors">
         <div *ngIf="errors.survey">*All above fields are required</div>
-        <div *ngIf="errors.estimatedIncidenceRateRange">*Estimated incidence rate must be an integer in the range of (1,100)</div>
+        <div *ngIf="errors.estimatedIncidenceRateRange">*Estimated incidence rate must be an integer in the range of ({{cacService['selectedCountryDetails'][group_index]['validIncidenceRateRange']['min']}},{{cacService['selectedCountryDetails'][group_index]['validIncidenceRateRange']['max']}})</div>
         <div *ngIf="errors.noOfWantedCompletes">*Number of Wanted Completes must be a natural number</div>
-        <div *ngIf="errors.estimatedLengthOfInterview">*Estimated Length of Interview should be greater than 0 Minute</div>
+        <div *ngIf="errors.estimatedLengthOfInterview">*Estimated Length of Interview should be between {{cacService['selectedCountryDetails'][group_index]['validLengthOfInterviewRange']['min']}} and {{cacService['selectedCountryDetails'][group_index]['validLengthOfInterviewRange']['max']}}</div>
         <div *ngIf="errors.noOfDaysinField">*Number of Days in Field should be greater than 0</div>
       </div>
     </div>

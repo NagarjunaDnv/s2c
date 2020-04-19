@@ -1,1 +1,5 @@
 <app-basic-settings *ngIf="tab_index==0" [group_index]=group_index></app-basic-settings>
+<app-regions *ngIf="tab_index==1&&!cacService['regionTypeSelected'][group_index]" [group_index]=group_index></app-regions>
+<app-profiling-questions *ngIf="tab_index==3&&cacService.profilingCategoryCurrentlySelected[group_index]" [group_index]=group_index></app-profiling-questions>
+<app-profiling *ngIf="tab_index==3&&!cacService.profilingCategoryCurrentlySelected[group_index]" [group_index]=group_index></app-profiling>
+<app-sub-regions *ngIf="tab_index==1&&cacService['regionTypeSelected'][group_index]" [group_index]=group_index></app-sub-regions>

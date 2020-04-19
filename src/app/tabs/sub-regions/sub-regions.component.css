@@ -1,0 +1,30 @@
+.discard i{
+    font-size: 12px;
+}
+.sub-regions{
+    margin: 20px;
+}
+.title{
+    margin-top: 16px;
+}
+.option{
+    padding: 7.5px 7.5px 7.5px 12px;
+    border-radius: 4.5px;
+    background-color: #f5f5f5;
+}
+.option .option-title{
+    font-size: 14px;
+}
+.methods{
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+}
+@media screen and (max-width:720px){
+    .option:hover{
+        background-color: #f5f5f5;
+    }
+}
+.option.selected{
+    background-color: #dcdcdc;
+}

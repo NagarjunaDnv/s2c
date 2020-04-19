@@ -1,0 +1,19 @@
+<div class="settings">
+  
+  <div class="title">
+    Choose a global profiling category
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let category of cacService.profilingCategories[cacService.selectedCountryDetails[group_index]['id']];let i=index" (click)="profilingQuestions(category.id,i)">
+      <div class="option-square">
+        <i class="fas fa-check" *ngIf="cacService.selectedProfilingCQ[group_index]&&cacService.selectedProfilingCQ[group_index][category.id]&&(category.id|count:group_index)"></i>
+      </div>  
+      <div class="option-title">
+        {{category.name}}
+      </div>
+      <div class="count" *ngIf="cacService.selectedProfilingCQ[group_index]&&cacService.selectedProfilingCQ[group_index][category.id]&&(category.id|count:group_index)">
+        {{category.id|count:group_index}}
+      </div>
+    </div>
+  </div>
+</div>

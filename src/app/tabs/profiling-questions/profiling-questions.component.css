@@ -1,0 +1,49 @@
+.heading{
+    color: #2A2A2A;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.58px;
+    line-height: 16px;
+    margin-top: 15px;
+}
+.title{
+    color: #2A2A2A;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.58px;
+    line-height: 16px;
+}
+.title span{
+  color: #64C07E;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 0.58px;
+  line-height: 14px;
+}
+.variable{
+    padding: 7.5px 15px 8px 13px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    background-color: #F1F1F1;
+    color: #2A2A2A;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.71px;
+    line-height: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.variable-selected{
+    background-color: #E5F3E6;
+}
+.row{
+    margin-top: 13px;
+    margin-left: 0px;
+    margin-right: -10px;
+}

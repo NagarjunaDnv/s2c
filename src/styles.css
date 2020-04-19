@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css?family=Cairo");
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url(../node_modules/tiny-date-picker/tiny-date-picker.css);
 *{
     margin:0;
     padding:0

@@ -1,3 +1,15 @@
-<p>
-  regions works!
-</p>
+<div class="settings">
+  <div class="title">
+    Select from Options
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let regionType of cacService['selectedCountryDetails'][group_index]['regionTypes'];let i=index" (click)="selectRegionType(i,regionType.name,regionType.id)">
+      <div class="option-title">
+        {{regionType.name}}
+      </div>
+      <div class="option-content">
+        {{regionType.description}}
+      </div>
+    </div>
+  </div>
+</div>

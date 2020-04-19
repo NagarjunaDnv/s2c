@@ -1,0 +1,87 @@
+[{
+	"id": 9,
+	"name": "Automotive",
+	"marketplace": null
+}, {
+	"id": 18,
+	"name": "Business & Occupation",
+	"marketplace": {
+		"id": 2,
+		"name": ""
+	}
+}, {
+	"id": 12,
+	"name": "Country specific",
+	"marketplace": null
+}, {
+	"id": 27,
+	"name": "Education",
+	"marketplace": null
+}, {
+	"id": 11,
+	"name": "Electronics",
+	"marketplace": null
+}, {
+	"id": 26,
+	"name": "Ethnicity",
+	"marketplace": null
+}, {
+	"id": 31,
+	"name": "Finance",
+	"marketplace": null
+}, {
+	"id": 20,
+	"name": "Food & Beverage",
+	"marketplace": null
+}, {
+	"id": 21,
+	"name": "Gaming",
+	"marketplace": null
+}, {
+	"id": 23,
+	"name": "Healthcare Consumer",
+	"marketplace": {
+		"id": 3,
+		"name": ""
+	}
+}, {
+	"id": 24,
+	"name": "Healthcare Professional",
+	"marketplace": null
+}, {
+	"id": 16,
+	"name": "Hobbies & Interests",
+	"marketplace": null
+}, {
+	"id": 10,
+	"name": "Household",
+	"marketplace": null
+}, {
+	"id": 25,
+	"name": "Media",
+	"marketplace": null
+}, {
+	"id": 29,
+	"name": "Mobile",
+	"marketplace": null
+}, {
+	"id": 28,
+	"name": "Mother & Baby",
+	"marketplace": null
+}, {
+	"id": 32,
+	"name": "Region",
+	"marketplace": null
+}, {
+	"id": 17,
+	"name": "Research",
+	"marketplace": null
+}, {
+	"id": 22,
+	"name": "Smoking",
+	"marketplace": null
+}, {
+	"id": 15,
+	"name": "Travel",
+	"marketplace": null
+}]

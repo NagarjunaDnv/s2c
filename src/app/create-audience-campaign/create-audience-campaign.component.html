@@ -40,9 +40,9 @@
         <div class="container-1">
           <div class="tabs">
           <ul>
-            <li (click)="openTab(i,k)" [ngClass]="{'activetab': reqTabIndex[i]==k}" *ngFor="let tab of tabNames;let k=index">
+            <li (click)="openTab(i,k)" [ngClass]="{'activetab': cacService.reqTabIndex[i]==k,'custom-fade':(k!=0&&(cacService.basicSettingsErrors[i]==undefined||cacService.basicSettingsErrors[i]==true))||(cacService['selectedCountryDetails'][i] && cacService['selectedCountryDetails'][i]['regionTypes'].length==0&&k==1)}" *ngFor="let tab of cacService.tabNames;let k=index">
               <div class="title">
-                {{tabNames[k]}}
+                {{cacService.tabNames[k]}}
               </div>
               <div class="briefDetails" *ngIf="k==0">
                 <span *ngIf="cacService['targetGroupsDetails'][i]['noOfWantedCompletes']">{{cacService['targetGroupsDetails'][i]['noOfWantedCompletes']}} completes, </span>
@@ -51,7 +51,12 @@
                 <span *ngIf="cacService['targetGroupsDetails'][i]['minAge']&&cacService['targetGroupsDetails'][i]['maxAge']">{{cacService['targetGroupsDetails'][i]['minAge']}}-{{cacService['targetGroupsDetails'][i]['maxAge']}}, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']">LOI {{cacService['targetGroupsDetails'][i]['estimatedLengthOfInterview']}} min, </span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']">IR {{cacService['targetGroupsDetails'][i]['estimatedIncidenceRate']}}%, </span>
-                <span *ngIf="cacService['targetGroupsDetails'][i]['startDate']">{{cacService['targetGroupsDetails'][i]['startDate']}}</span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['startDate']">{{cacService['targetGroupsDetails'][i]['startDate'] | formatDate}}</span>
+              </div>
+              <div class="briefDetails" *ngIf="k==1">
+                <span *ngIf="cacService['selectedCountryDetails'][i] && cacService['selectedCountryDetails'][i]['regionTypes'].length==0">Regional targeting might be available under profiling</span>
+                <span *ngIf="cacService['selectedCountryDetails'][i] && cacService['selectedCountryDetails'][i]['regionTypes'].length!=0&&(!cacService['targetGroupsDetails'][i]['regionIDs']||cacService['targetGroupsDetails'][i]['regionIDs'].length==0)">No regions selected</span>
+                <span *ngIf="cacService['targetGroupsDetails'][i]['regionIDs']&&cacService['targetGroupsDetails'][i]['regionIDs'].length!=0&&cacService.regionTypeSelected[i]">{{cacService['targetGroupsDetails'][i]['regionIDs'].length}} out of {{cacService['selectedCountryDetails'][i]['regionTypes'][cacService['selectedRegionTypeIndex'][i]]['regions'].length}} {{cacService['selectedCountryDetails'][i]['regionTypes'][cacService['selectedRegionTypeIndex'][i]]['name']}} selected</span>
               </div>
               <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </li>
@@ -60,18 +65,21 @@
           <div class="tabs-mobile">
             <div class="dropdown">
               <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{tabNames[reqTabIndex[i]]}}
+                {{cacService.tabNames[cacService.reqTabIndex[i]]}}
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" (click)="openTab(i,j)" *ngFor="let tab of tabNames;let j=index">{{tab}}</a>
+                <a class="dropdown-item" (click)="openTab(i,j)" *ngFor="let tab of cacService.tabNames;let j=index">{{tab}}</a>
               </div>
             </div>
           </div>
           <div class="tab_content">
-            <app-tabs [tab_index]="reqTabIndex[i]" group_index={{i}}></app-tabs>
+            <app-tabs [tab_index]="cacService.reqTabIndex[i]" group_index={{i}}></app-tabs>
           </div>
         </div>  
       </div>
     </div>
+  </div>
+  <div class="add">
+    <button class="btn btn-dark new" (click)="createTargetGroup()"><i class="fas fa-plus"></i>&nbsp;Add new target group</button>
   </div>
 </div>
