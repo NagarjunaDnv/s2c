@@ -4,7 +4,7 @@ import { CreateAudienceCampaignService } from 'src/app/services/create-audience-
 @Component({
   selector: 'app-sub-regions',
   templateUrl: './sub-regions.component.html',
-  styleUrls: ['../basic-settings/basic-settings.component.css','../regions/regions.component.css','./sub-regions.component.css']
+  styleUrls: ['../basic-settings/basic-settings.component.css','../regions/regions.component.css','./sub-regions.component.css','../profiling/profiling.component.css']
 })
 export class SubRegionsComponent implements OnInit {
   @Input() group_index:number;

@@ -19,22 +19,31 @@ export class ProfilingQuestionsComponent implements OnInit {
   }
 
   async profilingQuestions(countryID,profilingCategoryID){
+    console.log(this.cacService.profilingQuestions)
     if(!this.cacService.profilingQuestions[countryID] || !this.cacService.profilingQuestions[countryID][profilingCategoryID]){
       await this.http.get('../../../assets/questions.json').subscribe(async(res)=>{
-        this.cacService.profilingQuestions[countryID]={[profilingCategoryID]:res}
-       Object.assign(this.cacService.selectedProfilingCQ[this.group_index],{[profilingCategoryID]:{}})
+        Object.assign(this.cacService.selectedProfilingCQ[this.group_index],{[profilingCategoryID]:{}})
+        if(!this.cacService.profilingQuestions[countryID]){
+          this.cacService.profilingQuestions[countryID]={}
+        }
+        Object.assign(this.cacService.profilingQuestions[countryID],{[profilingCategoryID]:res})
         this.isDataRetrieved=true
         console.log(res)
       })
     }
     else{
+      if(Object.keys(this.cacService.selectedProfilingCQ[this.group_index]).length==0){
+        Object.assign(this.cacService.selectedProfilingCQ[this.group_index],{[profilingCategoryID]:{}})
+      }
       this.isDataRetrieved=true
     }
   }
+
   processVariableID(variableID){
     const profilingID=this.cacService.profilingCategoryCurrentlySelected[this.group_index]
     this.cacService.selectedProfilingCQ[this.group_index][profilingID][variableID]=!this.cacService.selectedProfilingCQ[this.group_index][profilingID][variableID]
   }
+
   selectAll(variables){
     const profilingID=this.cacService.profilingCategoryCurrentlySelected[this.group_index]
     variables.forEach(elem=>{

@@ -10,7 +10,9 @@ declare var $:any;
 export class CreateAudienceCampaignComponent implements OnInit {
   prevIndex:number=-1
   groups:any=[0];
-  countries:any
+  countries:any;
+
+  arrowDirectionUp:Object={}
   constructor(public cacService:CreateAudienceCampaignService,private http:HttpClient) { }
 
   ngOnInit() {
@@ -41,8 +43,10 @@ export class CreateAudienceCampaignComponent implements OnInit {
   toggle(group_index){
     console.log(group_index,this.prevIndex)
     $('#'+`${group_index}`).collapse('toggle')
+    this.arrowDirectionUp[group_index]=!this.arrowDirectionUp[group_index]
     if(group_index!=this.prevIndex){
       $('#'+`${this.prevIndex}`).collapse('hide')
+      this.arrowDirectionUp[this.prevIndex]=false
     }
     this.prevIndex=group_index
   }

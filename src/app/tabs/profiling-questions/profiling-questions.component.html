@@ -1,6 +1,6 @@
 <div class="sub-regions" *ngIf="isDataRetrieved">
     <div class="discard">
-        <button class="btn btn-primary" (click)="goBack()"><i class="fas fa-chevron-left"></i>&nbsp;Go back</button>
+        <button class="btn btn-success" (click)="goBack()"><i class="fas fa-chevron-left"></i>&nbsp;Go back</button>
       </div>
     <div class="heading">
         Choose a global profiling category > Select {{cacService.profilingQuestions[cacService.selectedCountryDetails[group_index]['id']][cacService.profilingCategoryCurrentlySelected[group_index]]['name']}} Attributes

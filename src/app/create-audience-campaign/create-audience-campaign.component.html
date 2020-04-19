@@ -34,7 +34,7 @@
     <div *ngFor="let group of groups;let i=index">
       <div style="position: relative;">
         <app-group-title group_index={{i}}></app-group-title>
-        <span (click)="toggle(i)" class="chevron-down"><i class="fas fa-chevron-down"></i></span>
+        <span (click)="toggle(i)" class="chevron-down"><i class="fas fa-chevron-down" *ngIf="!arrowDirectionUp[i]"></i><i class="fas fa-chevron-up" *ngIf="arrowDirectionUp[i]"></i></span>
       </div>
       <div class="collapse" [id]="i">
         <div class="container-1">
