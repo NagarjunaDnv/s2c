@@ -3,3 +3,6 @@
 <app-profiling-questions *ngIf="tab_index==3&&cacService.profilingCategoryCurrentlySelected[group_index]" [group_index]=group_index></app-profiling-questions>
 <app-profiling *ngIf="tab_index==3&&!cacService.profilingCategoryCurrentlySelected[group_index]" [group_index]=group_index></app-profiling>
 <app-sub-regions *ngIf="tab_index==1&&cacService['regionTypeSelected'][group_index]" [group_index]=group_index></app-sub-regions>
+<app-audience-panel *ngIf="tab_index==2 &&!cacService.audiencePanel[group_index]" [group_index]="group_index"></app-audience-panel>
+<app-insight-exchange *ngIf="tab_index==2 &&cacService.audiencePanel[group_index]" [group_index]="group_index"></app-insight-exchange>
+<app-quotas *ngIf="tab_index==4" [group_index]="group_index"></app-quotas>

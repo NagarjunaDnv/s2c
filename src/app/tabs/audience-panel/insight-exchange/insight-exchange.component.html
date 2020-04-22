@@ -1,0 +1,39 @@
+<div class="settings">
+  <div class="title">
+    Select Audience Panel > Insight Exchange Panel (169)
+  </div>
+  <div class="header">
+    <div class="he1">
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="show">Showing : </span>&nbsp;<span class="show-2">{{cacService.audiencePanel[group_index]['show']}}</span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="getBy('All panels')">All panels</a>
+          <a class="dropdown-item" (click)="getBy('Push panels')">Push panels</a>
+          <a class="dropdown-item" (click)="getBy('Non push panels')">Non push panels</a>
+          <a class="dropdown-item" (click)="getBy('Selected panels')">Selected panels</a>
+        </div>
+      </div>
+    </div>
+    <div class="he2">
+      <input placeholder="Search" class="form-control"/>
+    </div>
+    <div class="he3">
+      <button>Upload Specific Details</button>
+    </div>
+  </div>
+  <div class="pca">
+    <button>Select all</button>
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let category of [1,2,3,4]">
+      <div class="option-square">
+        <i class="fas fa-check"></i>
+      </div>  
+      <div class="option-title">
+        {{category}}
+      </div>
+    </div>
+  </div>
+</div>

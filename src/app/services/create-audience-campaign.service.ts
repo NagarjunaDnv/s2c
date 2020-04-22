@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CreateAudienceCampaignService {
   targetGroupsDetails:any=[
-    {}
+    {profilingVariables:[]}
   ]
   groupDetails:any={
     noOfWantedCompletes:'',
@@ -17,7 +17,8 @@ export class CreateAudienceCampaignService {
     estimatedLengthOfInterview:'',
     startDate:null,
     noOfDaysinField:'',
-    regionIds:[]
+    regionIds:[],
+    profilingVariables:[]
   }
   countries:any
   selectedCountryDetails:any=[] //arrayIndex represents group_index
@@ -31,8 +32,11 @@ export class CreateAudienceCampaignService {
   profilingQuestions:any={} //keys represents countryID and categoryID
   profilingCategoryCurrentlySelected:any={} //key represents groupindex //value represents categoryID
   selectedOptions:any={} //for sub-regions
-  selectedProfilingCQ:any={ //variableIDs //key represents group_index //inner_key represents profiling category index
+  selectedProfilingCQ:any={ //variableIDs //key represents group_index //inner_key represents profiling categoryID & questionID
   }
+  selectedProfilingVariableIDs:any={} //key=group_index,inner_keys=profilingVariableID
+  selectedQuestionIDs:any={} //key=group_index,inner_key=QuestionID,inner_value=QuestionName or null
+  audiencePanel:any={}
   constructor() { 
     
   }

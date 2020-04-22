@@ -1,0 +1,70 @@
+<div class="settings">
+  <div class="title">
+    Setup Quota & Distributions
+  </div>
+  <div class="cpd-ca">
+    <button>
+      <label class="switch">
+        <input type="checkbox" id="checkbox-1" (change)="toggle1($event)">
+        <span class="slider round"></span>
+      </label>      
+      <span (click)="btnToggle1()" class="text">Setup quotas in percentage(%)</span>
+    </button>
+    <button>
+      <label class="switch">
+        <input type="checkbox" id="checkbox-2" (change)="toggle2($event)">
+        <span class="slider round"></span>
+      </label>
+      <span class="text" (click)="btnToggle2()">Show feasibility numbers</span>
+    </button>
+  </div>
+  <p>
+    Quotas help you split the completes into groups of specific age, gender, regions and/or profiling. To interlock quotas click New interlocked quota below.
+  </p>
+  <div class="parent">
+    <div class="children">
+      <div class="c-header">
+        <div class="c-title">Gender</div>
+        <div class="c-description"><span>Selected: </span>Both</div>
+        <div class="c-btns">
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            None
+          </div>
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            Census
+          </div>
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            Custom
+          </div>
+        </div>
+      </div>
+      <div class="c-header" *ngFor="let question of questions;let i=index">
+        <div class="c-title">Profiling {{i+1}}</div>
+        <div class="c-description">{{question.questionName}}</div>
+        <div class="c-btns">
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            None
+          </div>
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            Census
+          </div>
+          <div class="c-btn">
+            <div class="outer"></div>
+            <div class="inner"></div>
+            Custom
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

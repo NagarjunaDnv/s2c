@@ -25,6 +25,7 @@ export class CreateAudienceCampaignComponent implements OnInit {
     // this.http.get('https://api.cintworks.net/ordering/reference/countries',httpOptions).subscribe(res=>{
     //   console.log(res)
     // })
+
   }
   openTab(group_index,tab_index:number){
     // if(!this.cacService.selectedCountryDetails[group_index]){
@@ -51,10 +52,10 @@ export class CreateAudienceCampaignComponent implements OnInit {
     this.prevIndex=group_index
   }
 
-  createTargetGroup(){
-    this.groups.push(this.groups.length)
-    this.cacService.targetGroupsDetails.push({})
-    this.cacService.reqTabIndex.push(0)
-    console.log(this.cacService.groupDetails)
-  }
+  // createTargetGroup(){
+  //   this.groups.push(this.groups.length)
+  //   this.cacService.targetGroupsDetails.push({profilingVariables:[]})
+  //   this.cacService.reqTabIndex.push(0)
+  //   console.log(this.cacService.groupDetails)
+  // }
 }

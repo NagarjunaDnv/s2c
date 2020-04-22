@@ -58,6 +58,12 @@
                 <span *ngIf="cacService['selectedCountryDetails'][i] && cacService['selectedCountryDetails'][i]['regionTypes'].length!=0&&(!cacService['targetGroupsDetails'][i]['regionIDs']||cacService['targetGroupsDetails'][i]['regionIDs'].length==0)">No regions selected</span>
                 <span *ngIf="cacService['targetGroupsDetails'][i]['regionIDs']&&cacService['targetGroupsDetails'][i]['regionIDs'].length!=0&&cacService.regionTypeSelected[i]">{{cacService['targetGroupsDetails'][i]['regionIDs'].length}} out of {{cacService['selectedCountryDetails'][i]['regionTypes'][cacService['selectedRegionTypeIndex'][i]]['regions'].length}} {{cacService['selectedCountryDetails'][i]['regionTypes'][cacService['selectedRegionTypeIndex'][i]]['name']}} selected</span>
               </div>
+              <div class="briefDetails" *ngIf="k==2">
+                System selected set of Insight Exchange panels
+              </div>
+              <div class="briefDetails" *ngIf="k==3">
+                <span *ngIf="!cacService.targetGroupsDetails[i]['profilingVariables'].length">No</span><span *ngIf="cacService.targetGroupsDetails[i]['profilingVariables'].length">{{cacService.targetGroupsDetails[i]['profilingVariables'].length}}</span> profiling attributes selected
+              </div>
               <span class="arrow"><i class="fas fa-chevron-right"></i></span>
             </li>
           </ul>
@@ -79,7 +85,7 @@
       </div>
     </div>
   </div>
-  <div class="add">
+  <!-- <div class="add">
     <button class="btn btn-dark new" (click)="createTargetGroup()"><i class="fas fa-plus"></i>&nbsp;Add new target group</button>
-  </div>
+  </div> -->
 </div>

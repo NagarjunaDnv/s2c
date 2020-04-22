@@ -48,3 +48,23 @@
     margin-left: 0px;
     margin-right: -10px;
 }
+.cpd-ca{
+    text-align: end;
+    width: 100%;
+}
+.cpd-ca button{
+    background-color: #F1F1F1;
+    color: #2A2A2A;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.71px;
+    line-height: 14px;
+    padding: 7.5px 12px 8px 12px;
+    border: none;
+    outline: none;
+    margin-top: 10px;
+}
+.cpd-ca button:nth-child(1){
+    margin-right: 10px;
+}

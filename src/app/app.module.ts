@@ -15,6 +15,9 @@ import { FormatDatePipe } from './pipes/formateDate.pipe';
 import { ProfilingComponent } from './tabs/profiling/profiling.component';
 import { ProfilingQuestionsComponent } from './tabs/profiling-questions/profiling-questions.component';
 import { CountPipe } from './pipes/count.pipe';
+import { AudiencePanelComponent } from './tabs/audience-panel/audience-panel.component';
+import { InsightExchangeComponent } from './tabs/audience-panel/insight-exchange/insight-exchange.component';
+import { QuotasComponent } from './tabs/quotas/quotas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +32,9 @@ import { CountPipe } from './pipes/count.pipe';
     SubRegionsComponent,
     ProfilingComponent,
     ProfilingQuestionsComponent,
+    AudiencePanelComponent,
+    InsightExchangeComponent,
+    QuotasComponent,
   ],
   imports: [
     BrowserModule,

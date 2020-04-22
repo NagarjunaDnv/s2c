@@ -1,0 +1,24 @@
+.cat-des{
+    color: #2A2A2A;
+  font-family: Roboto;
+  font-size: 12px;
+  letter-spacing: 0.71px;
+  line-height: 16px;
+  height: auto;
+  min-height: 32px;
+}
+.audience-category{
+    margin: 20px 20px 0 0;
+    width: 100%;
+    max-width: 320px;
+}
+@media screen and (max-width:576px){
+    .cat-des{
+        min-height: 0;
+        height: auto;
+        margin-bottom: 12px;
+    }
+    .audience-category{
+        margin-top: 15px;
+    }
+}
