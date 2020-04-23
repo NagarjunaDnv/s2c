@@ -23,8 +23,11 @@ p{
     letter-spacing: 0.71px;
     line-height: 32px;
 }
+.children{
+    border:1px solid #EAEAEA;
+    margin-top: 15px;
+}
 .c-header{
-    border: 1px solid #EAEAEA;
     background-color: #FFFFFF;
     padding-left: 15px;
     padding-right: 17px;
@@ -51,7 +54,8 @@ p{
     letter-spacing: 0.71px;
     line-height: 14px;
     margin-top: 12px;
-    margin-bottom: 18px
+    margin-bottom: 18px;
+    width: 56%;
 }
 .c-btns{
     position: absolute;
@@ -72,6 +76,7 @@ p{
     background-color: #FAFAFA;
     padding: 15px 30px 15px 38px;
     outline: none;
+    cursor: pointer;
     position: relative;
 }
 .c-btn .outer{
@@ -93,4 +98,34 @@ p{
     left: 13px;
     top: 50%;
     transform: translateY(-50%);
+}
+.c-content .child{
+    margin-left: 15px;
+    margin-right: 17px;
+    padding:0 10px 0 10px;
+    height: 62px;
+    border-top: 1px solid #EAEAEA;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #2A2A2A;
+    font-family: Roboto;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.75px;
+    line-height: 15px;
+}
+.c-content .child:last-child{
+    border-bottom: 1px solid #EAEAEA;
+    margin-bottom: 16px;
+}
+.input-field{
+    width: 60px;
+    height: 35px;
+}
+.input-field .form-control{
+    border: 1px solid #EAEAEA;
+}
+.custom-fade{
+    opacity: 0.5;
 }

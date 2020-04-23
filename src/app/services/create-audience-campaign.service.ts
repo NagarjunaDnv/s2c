@@ -37,6 +37,8 @@ export class CreateAudienceCampaignService {
   selectedProfilingVariableIDs:any={} //key=group_index,inner_keys=profilingVariableID
   selectedQuestionIDs:any={} //key=group_index,inner_key=QuestionID,inner_value=QuestionName or null
   audiencePanel:any={}
+
+  quotasToggle:any={} //key-group_index inner-keys=gender or regions or profiling 
   constructor() { 
     
   }

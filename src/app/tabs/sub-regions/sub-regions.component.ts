@@ -20,14 +20,14 @@ export class SubRegionsComponent implements OnInit {
     this.cacService.selectedOptions[this.group_index]={}
     this.cacService.targetGroupsDetails[this.group_index]['regionIDs']=[]
   }
-  toggle(regionID){
-    this.cacService.selectedOptions[this.group_index][regionID]=!this.cacService.selectedOptions[this.group_index][regionID]
+  toggle(regionID,regionName){
+    this.cacService.selectedOptions[this.group_index][regionID]=this.cacService.selectedOptions[this.group_index][regionID]?false:regionName
     this.cacService.targetGroupsDetails[this.group_index]['regionIDs']=this.setSelectedRegionIDs()
     console.log(this.cacService.targetGroupsDetails)
   }
   
   setSelectedRegionIDs(){
-    return Object.keys(this.cacService.selectedOptions[this.group_index]).filter(key => this.cacService.selectedOptions[this.group_index][key] === true);
+    return Object.keys(this.cacService.selectedOptions[this.group_index]).filter(key => this.cacService.selectedOptions[this.group_index][key] != false);
   }
   
   selectAll(){
@@ -35,7 +35,7 @@ export class SubRegionsComponent implements OnInit {
     let IDs=[]
     let i=0;
     for(i;i<regions.length;i++){
-      this.cacService.selectedOptions[this.group_index][regions[i]['id']]=true
+      this.cacService.selectedOptions[this.group_index][regions[i]['id']]=regions[i]['name']
       IDs.push(regions[i]['id'])
     }
     this.cacService.targetGroupsDetails[this.group_index]['regionIDs']=IDs

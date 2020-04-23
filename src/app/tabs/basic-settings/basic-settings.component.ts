@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CreateAudienceCampaignService } from 'src/app/services/create-audience-campaign.service';
-import { CountriesService } from 'src/app/test/countries.service';
 import TinyDatePicker from 'tiny-date-picker'
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-basic-settings',
   templateUrl: './basic-settings.component.html',
@@ -10,11 +10,11 @@ import TinyDatePicker from 'tiny-date-picker'
 export class BasicSettingsComponent implements OnInit {
   @Input() group_index:number;
   errors:any={}
-  constructor(public cacService:CreateAudienceCampaignService,private countriesService:CountriesService) { }
+  constructor(public cacService:CreateAudienceCampaignService,private http:HttpClient) { }
 
   ngOnInit() {
     this.initializeDatePicker()
-    this.countriesService.fetchCountries().toPromise().then(res=>{
+    this.http.get('assets/countries.json').toPromise().then(res=>{
       this.cacService.countries=res
       console.log(res[0])
     }).catch(e=>{

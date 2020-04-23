@@ -25,42 +25,83 @@
     <div class="children">
       <div class="c-header">
         <div class="c-title">Gender</div>
-        <div class="c-description"><span>Selected: </span>Both</div>
-        <div class="c-btns">
-          <div class="c-btn">
+        <div class="c-description"><span>Selected: </span>{{cacService.targetGroupsDetails[group_index]['gender']}}</div>
+        <div class="c-btns" [ngClass]="{'custom-fade': cacService.targetGroupsDetails[group_index]['gender']!='M&F'}">
+          <div class="c-btn" (click)="toggleType('gender',0)">
             <div class="outer"></div>
-            <div class="inner"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['gender'][0]"></div>
             None
           </div>
-          <div class="c-btn">
+          <div class="c-btn" (click)="toggleType('gender',1)">
             <div class="outer"></div>
-            <div class="inner"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['gender'][1]"></div>
             Census
           </div>
-          <div class="c-btn">
+          <div class="c-btn" (click)="toggleType('gender',2)">
             <div class="outer"></div>
-            <div class="inner"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['gender'][2]"></div>
             Custom
           </div>
         </div>
       </div>
+      <div class="c-content" *ngIf="cacService.targetGroupsDetails[group_index]['gender']=='M&F'&& !cacService.quotasToggle[group_index]['gender'][0]">
+        <div class="child">
+            <div>Male</div>
+            <div class="input-field">
+              <input class="form-control" placeholder="100" aria-placeholder="100">
+            </div>
+        </div>
+        <div class="child">
+            <div>Female</div>
+            <div class="input-field"><input class="form-control" placeholder="100" aria-placeholder="100"></div>
+        </div>
+      </div>
+    </div>
+    <div class="children">
+      <div class="c-header">
+        <div class="c-title">Region</div>
+        <div class="c-description" *ngIf="regions.length!=0"><span *ngFor="let region of regions">{{region.name}}, </span></div>
+        <div class="c-description" *ngIf="regions.length==0">No specific region(s) selected</div>
+        <div class="c-btns" [ngClass]="{'custom-fade': regions.length<2}">
+          <div class="c-btn" (click)="toggleType('region',0)">
+            <div class="outer"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['region'][0]"></div>
+            None
+          </div>
+          <div class="c-btn" (click)="toggleType('region',1)">
+            <div class="outer"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['region'][1]"></div>
+            Census
+          </div>
+          <div class="c-btn" (click)="toggleType('region',2)">
+            <div class="outer"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['region'][2]"></div>
+            Custom
+          </div>
+        </div>
+      </div>
+      <div class="c-content" *ngIf="regions.length>1 &&!cacService.quotasToggle[group_index]['region'][0]">
+        <div class="child" *ngFor="let region of regions">
+            <div>{{region.name}}</div>
+            <div class="input-field">
+              <input class="form-control" placeholder="100" aria-placeholder="100">
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="children" *ngIf="questions.length!=0">
       <div class="c-header" *ngFor="let question of questions;let i=index">
         <div class="c-title">Profiling {{i+1}}</div>
         <div class="c-description">{{question.questionName}}</div>
         <div class="c-btns">
           <div class="c-btn">
             <div class="outer"></div>
-            <div class="inner"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['profiling'][0]"></div>
             None
           </div>
           <div class="c-btn">
             <div class="outer"></div>
-            <div class="inner"></div>
-            Census
-          </div>
-          <div class="c-btn">
-            <div class="outer"></div>
-            <div class="inner"></div>
+            <div class="inner" *ngIf="cacService.quotasToggle[group_index]['profiling'][2]"></div>
             Custom
           </div>
         </div>
